@@ -1,0 +1,16 @@
+﻿@model Attitude_Aviation.Models.Plane
+
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New</h2>
+
+@using (Html.BeginForm("Add", "Planes", FormMethod.Post, new { @class = "form" }))
+{
+    Html.RenderPartial("_PlaneForm");
+}
+
+
+

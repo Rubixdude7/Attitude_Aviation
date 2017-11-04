@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Attitude_Aviation.Models.Plane>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Planes</h2>
+<p>
+    @Html.ActionLink("Add Plane", "New")
+</p>
+<ul>
+    @foreach (var plane in Model)
+    {
+        <li>@plane.ID | Name: @plane.Name | Description: @plane.Description | Stock: @plane.Stock | @Html.ActionLink("Edit", "Edit", new { id = plane.ID }) | @Html.ActionLink("Delete", "Delete", new { id = plane.ID })</li>
+    }
+</ul>
+

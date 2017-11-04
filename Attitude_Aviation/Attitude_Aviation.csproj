@@ -192,12 +192,23 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PlanesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711011813242_InitialCreate.cs" />
+    <Compile Include="Migrations\201711011813242_InitialCreate.Designer.cs">
+      <DependentUpon>201711011813242_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711021820469_AddPlanesTable.cs" />
+    <Compile Include="Migrations\201711021820469_AddPlanesTable.Designer.cs">
+      <DependentUpon>201711021820469_AddPlanesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Plane.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -263,6 +274,11 @@
     <Content Include="Views\Home\Rent.cshtml" />
     <Content Include="Views\Home\Maintain.cshtml" />
     <Content Include="Views\Home\Learn.cshtml" />
+    <Content Include="Views\Planes\Index.cshtml" />
+    <Content Include="Views\Planes\New.cshtml" />
+    <Content Include="Views\Planes\Edit.cshtml" />
+    <Content Include="Views\Planes\_PlaneForm.cshtml" />
+    <Content Include="Views\Planes\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -279,6 +295,14 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711011813242_InitialCreate.resx">
+      <DependentUpon>201711011813242_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711021820469_AddPlanesTable.resx">
+      <DependentUpon>201711021820469_AddPlanesTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
