@@ -8,10 +8,24 @@
 <p>
     @Html.ActionLink("Add Plane", "New")
 </p>
-<ul>
+<table border="1" cellpadding="10" cellspacing="10">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Stock</td>
+        <td colspan="2"></td>
+    </tr>
     @foreach (var plane in Model)
     {
-        <li>@plane.ID | Name: @plane.Name | Description: @plane.Description | Stock: @plane.Stock | @Html.ActionLink("Edit", "Edit", new { id = plane.ID }) | @Html.ActionLink("Delete", "Delete", new { id = plane.ID })</li>
+        <tr>
+            <td>@plane.ID</td>
+            <td>@plane.Name</td>
+            <td>@plane.Description</td>
+            <td>@plane.Stock</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = plane.ID })</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = plane.ID })</td>
+        </tr>
     }
-</ul>
+</table>
 
