@@ -21,6 +21,7 @@ namespace Attitude_Aviation.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Plane> Planes { get; set; }
+        public DbSet<MaintenanceRequest> Requests { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -31,4 +32,5 @@ namespace Attitude_Aviation.Models
             return new ApplicationDbContext();
         }
     }
+
 }

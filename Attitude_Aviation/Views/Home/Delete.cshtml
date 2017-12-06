@@ -1,0 +1,25 @@
+﻿@model Attitude_Aviation.Models.MaintenanceRequest
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<p>
+    Are you sure you want to delete this entry?
+</p>
+
+<ul>
+    <li>Plane Name: @Model.Plane_name</li>
+    <li>Problem: @Model.Problem</li>
+    <li>Description @Model.Description</li>
+</ul>
+
+@using (Html.BeginForm("DoDelete", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.ID)
+    <input type="submit" class="btn btn-danger" value="Yes, Delete it!" />
+    @Html.ActionLink("No, back to Maintenance", "Maintain")
+}

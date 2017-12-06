@@ -9,8 +9,7 @@ namespace Attitude_Aviation.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "Attitude_Aviation.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Attitude_Aviation.Models.ApplicationDbContext context)

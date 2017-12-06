@@ -1,0 +1,13 @@
+﻿@model Attitude_Aviation.Models.MaintenanceRequest
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Update", "Home", FormMethod.Post, new { @class = "form" }))
+{
+    Html.RenderPartial("_RequestForm");
+}

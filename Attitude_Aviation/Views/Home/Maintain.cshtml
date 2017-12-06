@@ -1,7 +1,38 @@
-﻿@{
+﻿@model IEnumerable<Attitude_Aviation.Models.MaintenanceRequest>
+
+@{
     ViewBag.Title = "Repair Services";
 }
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<p>Enter your maintenance request here</p>
+
+@if ((System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Add Request", "NewRequest")
+    </p>
+
+    <table border="1" cellpadding="10" cellspacing="10">
+        <tr>
+            <td>ID</td>
+            <td>Model</td>
+            <td>Problem</td>
+            <td>Description</td>
+            <td colspan="2"></td>
+        </tr>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.ID</td>
+                <td>@request.Plane_name</td>
+                <td>@request.Problem</td>
+                <td>@request.Description</td>
+                <td>@Html.ActionLink("Edit", "Edit", new { id = request.ID })</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = request.ID })</td>
+            </tr>
+        }
+    </table>
+}
+

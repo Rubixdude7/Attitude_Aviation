@@ -25,4 +25,27 @@ namespace Attitude_Aviation.Migrations
             DropTable("dbo.Planes");
         }
     }
+
+    public partial class AddRequestsTable : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Maintenance",
+                c => new
+                {
+                    ID = c.Int(nullable: false, identity: true),
+                    Plane_Name = c.String(),
+                    Problem = c.String(),
+                    Description = c.String(),
+                })
+                .PrimaryKey(t => t.ID);
+
+        }
+
+        public override void Down()
+        {
+            DropTable("dbo.Maintenance");
+        }
+    }
 }
